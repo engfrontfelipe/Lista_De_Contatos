@@ -17,9 +17,7 @@ export const ButtonCircle = styled(Link)`
   align-items: center;
   text-decoration: none;
 
-  &:hover{
+  &:hover {
     background-color: rgb(22, 109, 0);
-
-
   }
 `;

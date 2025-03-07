@@ -1,80 +1,78 @@
 import styled from "styled-components";
 
 export const Table = styled.table`
-    margin-top: 10px;
-    width: 100%;
-    padding: 6px;
-    background-color: #1f1f20;
-    color: #dce0e6;
-    border-radius: 5px;
-    box-shadow: 0px 4px 10px #000000b5;
+  margin-top: 10px;
+  width: 100%;
+  padding: 6px;
+  background-color: #1f1f20;
+  color: #dce0e6;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px #000000b5;
 `;
 
 export const Td = styled.td`
-    padding-top: 12px;
-    padding-bottom: 6px;
-    text-align: center;
-    cursor: pointer;
-
+  padding-top: 12px;
+  padding-bottom: 6px;
+  text-align: center;
+  cursor: pointer;
 `;
 
 export const Th = styled.th`
-    padding: 10px;
-    text-align: center;
-    border-bottom: 2px solid #dce0e6;
-    cursor: pointer;
-
+  padding: 10px;
+  text-align: center;
+  border-bottom: 2px solid #dce0e6;
+  cursor: pointer;
 `;
 
 export const Tr = styled.tr`
-    &:nth-child(even) {
-        background-color: #252527;
-    }
+  &:nth-child(even) {
+    background-color: #252527;
+  }
 `;
 
 export const MenuContainer = styled.div`
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 `;
 
 export const MenuButton = styled.button`
-    background-color: #007bff;
-    color: #dce0e6;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    
-    &:hover {
-        background-color: #0056b3;
-    }
+  background-color: #007bff;
+  color: #dce0e6;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
 `;
 
 export const DropdownMenu = styled.div`
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #1f1f20;
-    border: 1px solid #3a3a3b;
-    border-radius: 4px;
-    padding: 5px;
-    box-shadow: 0px 4px 10px #000000b5;
-    z-index: 10;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1f1f20;
+  border: 1px solid #3a3a3b;
+  border-radius: 4px;
+  padding: 5px;
+  box-shadow: 0px 4px 10px #000000b5;
+  z-index: 10;
 `;
 
 export const MenuItem = styled.button`
-    display: block;
-    width: 100%;
-    padding: 8px;
-    text-align: left;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #dce0e6;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #dce0e6;
 
-    &:hover {
-        background-color: #3a3a3b;
-    }
+  &:hover {
+    background-color: #3a3a3b;
+  }
 `;
 
 export const ModalOverlay = styled.div`
@@ -136,4 +134,3 @@ export const Input = styled.input`
   background: #252527;
   color: #dce0e6;
 `;
-

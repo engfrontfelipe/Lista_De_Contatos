@@ -5,9 +5,9 @@ import { Title } from "./styles";
 const ContactList = () => {
   return (
     <>
-    <Title>Lista de Contatos</Title>
-    <Contact />
-    <ButtonAdd />
+      <Title>Lista de Contatos</Title>
+      <Contact />
+      <ButtonAdd />
     </>
   );
 };

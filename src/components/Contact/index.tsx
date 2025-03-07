@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { edit } from "../../store/reducers/contact";
+import { edit, remove } from "../../store/reducers/contact";
 import { RootState } from "../../store/index";
 import {
   Table,
@@ -21,7 +21,7 @@ import {
 interface Contact {
   id: number;
   name: string;
-  phone: number; 
+  phone: number;
   city: string;
 }
 
@@ -48,10 +48,10 @@ const Contact = () => {
   const handleEdit = (contact: Contact) => {
     setEditContact({ ...contact });
     setModalOpen(true);
-    setOpenMenuId(null); 
+    setOpenMenuId(null);
   };
 
-  const handleSave = () => {  
+  const handleSave = () => {
     if (editContact) {
       dispatch(edit(editContact));
       setModalOpen(false);
@@ -84,8 +84,17 @@ const Contact = () => {
                 </MenuButton>
                 {openMenuId === contact.id && (
                   <DropdownMenu>
-                    <MenuItem onClick={() => handleEdit(contact)}>Editar</MenuItem>
-                    <MenuItem onClick={() => alert("Excluir")}>Excluir</MenuItem>
+                    <MenuItem onClick={() => handleEdit(contact)}>
+                      Editar
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => {
+                        alert('Contato excluído com sucesso!')
+                        dispatch(remove(contact.id));
+                      }}
+                    >
+                      Excluir
+                    </MenuItem>
                   </DropdownMenu>
                 )}
               </MenuContainer>
@@ -99,20 +108,29 @@ const Contact = () => {
           <ModalContent>
             <CloseButton onClick={() => setModalOpen(false)}>X</CloseButton>
             <h2>Editar Contato</h2>
-            <Input 
-              type="text" 
-              value={editContact.name} 
-              onChange={(e) => setEditContact({ ...editContact, name: e.target.value })} 
+            <Input
+              type="text"
+              value={editContact.name}
+              onChange={(e) =>
+                setEditContact({ ...editContact, name: e.target.value })
+              }
             />
-            <Input 
-              type="number" 
-              value={editContact.phone} 
-              onChange={(e) => setEditContact({ ...editContact, phone: Number(e.target.value) })} 
+            <Input
+              type="number"
+              value={editContact.phone}
+              onChange={(e) =>
+                setEditContact({
+                  ...editContact,
+                  phone: Number(e.target.value),
+                })
+              }
             />
-            <Input 
-              type="text" 
-              value={editContact.city} 
-              onChange={(e) => setEditContact({ ...editContact, city: e.target.value })} 
+            <Input
+              type="text"
+              value={editContact.city}
+              onChange={(e) =>
+                setEditContact({ ...editContact, city: e.target.value })
+              }
             />
             <SaveButton onClick={handleSave}>Salvar</SaveButton>
           </ModalContent>

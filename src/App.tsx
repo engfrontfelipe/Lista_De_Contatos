@@ -13,9 +13,8 @@ const routes = createBrowserRouter([
 
   {
     path: "register",
-    element: <RegisterContact />
-
-  }
+    element: <RegisterContact />,
+  },
 ]);
 
 function App() {
@@ -23,13 +22,10 @@ function App() {
     <Provider store={store}>
       <GlobalStyle />
       <Container>
-      <RouterProvider router={routes} />
-
-
+        <RouterProvider router={routes} />
       </Container>
-    </Provider>  
-
-  )
+    </Provider>
+  );
 }
 
 export default App;

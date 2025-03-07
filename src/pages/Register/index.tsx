@@ -1,5 +1,3 @@
-const Register = () => {
-
-};
+const Register = () => {};
 
 export default Register;
