@@ -21,7 +21,7 @@ const Contact = () => {
   // Estados para armazenar os valores do formulário
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
-  const [cidade, setCidade] = useState("");
+  const [email, setEmail] = useState("");
 
   // Função para lidar com a mudança no campo telefone
   const handleChangeTelefone = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,13 +33,13 @@ const Contact = () => {
     event.preventDefault(); // Impede o comportamento padrão do formulário
 
     // Verifica se todos os campos foram preenchidos
-    if (telefone.length === 0 || nome.length === 0 || cidade.length === 0) {
+    if (telefone.length === 0 || nome.length === 0 || email.length === 0) {
       console.error("Erro: Todos os campos devem ser preenchidos!");
       return; // Se algum campo estiver vazio, não envia os dados
     }
 
     // Dados a serem enviados
-    const contactData = { name: nome, phone: telefone, city: cidade };
+    const contactData = { name: nome, phone: telefone, email: email };
 
     console.log("Dados enviados:", contactData);
 
@@ -52,7 +52,7 @@ const Contact = () => {
     // Limpa os campos após o envio
     setNome("");
     setTelefone("");
-    setCidade("");
+    setEmail("");
 
     navigate('/')
   };
@@ -82,13 +82,13 @@ const Contact = () => {
           maxLength={15}
         />
 
-        <S.Label htmlFor="cidade">Cidade:</S.Label>
+        <S.Label htmlFor="email">Email:</S.Label>
         <S.Input
           required 
           type="text" 
-          id="cidade" 
-          value={cidade} 
-          onChange={(e) => setCidade(e.target.value)} 
+          id="email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
         />
 
         <S.MenuButton type="submit">Cadastrar</S.MenuButton>

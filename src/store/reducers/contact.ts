@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 type Contact = {
   name: string;
   phone: string;
-  city: string;
+  email: string;
   id: number;
 };
 
@@ -11,35 +11,35 @@ const initialState: Contact[] = [
   {
     name: "Felipe",
     phone: '22992122757',
-    city: "Rio de Janeiro",
+    email: "emailteste@gmail.com",
     id: Math.random(),
   },
 
   {
     name: "Marilene Bernardo",
     phone: '31973321315',
-    city: "Belo Horizonte",
+    email: "emailteste@gmail.com",
     id: Math.random(),
   },
 
   {
     name: "Rafael Janovicci",
     phone: '22999999999',
-    city: "Rio de Janeiro",
+    email: "emailteste@gmail.com",
     id: Math.random(),
   },
 
   {
     name: "Daniel Janovicci",
     phone: '22888888888',
-    city: "Rio de Janeiro",
+    email: "emailteste@gmail.com",
     id: Math.random(),
   },
 
   {
     name: "Daiane Janovicci",
     phone: '22777777777',
-    city: "Rio de Janeiro",
+    email: "emailteste@gmail.com",
     id: Math.random(),
   },
 ];

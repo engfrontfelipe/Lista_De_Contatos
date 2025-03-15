@@ -22,8 +22,8 @@ import {
 interface Contact {
   id: number;
   name: string;
-  phone: number;
-  city: string;
+  phone: string;
+  email: string;
 }
 
 
@@ -68,7 +68,7 @@ const Contact = () => {
         <Tr>
           <Th>Nome</Th>
           <Th>Telefone</Th>
-          <Th>Cidade</Th>
+          <Th>Email</Th>
           <Th>Ação</Th>
         </Tr>
 
@@ -76,7 +76,7 @@ const Contact = () => {
           <Tr key={contact.id}>
             <Td>{contact.name}</Td>
             <Td>{contact.phone}</Td>
-            <Td>{contact.city}</Td>
+            <Td>{contact.email}</Td>
             <Td>
               <MenuContainer className="menu-container">
                 <MenuButton
@@ -125,15 +125,15 @@ const Contact = () => {
               onChange={(e) =>
                 setEditContact({
                   ...editContact,
-                  phone: Number(e.target.value),
+                  phone: String(e.target.value),
                 })
               }
             />
             <Input
               type="text"
-              value={editContact.city}
+              value={editContact.email}
               onChange={(e) =>
-                setEditContact({ ...editContact, city: e.target.value })
+                setEditContact({ ...editContact, email: e.target.value })
               }
             />
             <SaveButton onClick={handleSave}>Salvar</SaveButton>
