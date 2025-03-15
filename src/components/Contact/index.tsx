@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { edit, remove } from "../../store/reducers/contact";
 import { RootState } from "../../store/index";
+import { showAlertSucessDelete, showAlertSucessEdit, showAlertSucessRegister } from "../CustomAlert";
 import {
   Table,
   Td,
@@ -24,6 +25,8 @@ interface Contact {
   phone: number;
   city: string;
 }
+
+
 
 const Contact = () => {
   const dispatch = useDispatch();
@@ -55,6 +58,7 @@ const Contact = () => {
     if (editContact) {
       dispatch(edit(editContact));
       setModalOpen(false);
+      showAlertSucessEdit()
     }
   };
 
@@ -89,7 +93,7 @@ const Contact = () => {
                     </MenuItem>
                     <MenuItem
                       onClick={() => {
-                        alert('Contato excluído com sucesso!')
+                        showAlertSucessDelete()
                         dispatch(remove(contact.id));
                       }}
                     >
